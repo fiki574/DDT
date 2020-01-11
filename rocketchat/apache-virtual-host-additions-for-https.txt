@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond %{HTTP:Upgrade} =websocket [NC]
+RewriteRule /(.*) ws://localhost:4408/$1 [P,L]
+ProxyPass /websocket ws://localhost:4408/websocket
+ProxyPassMatch ^/sockjs/(.*)/websocket ws://localhost:4408/sockjs/$1/websocket

@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+  wiki:
+    image: requarks/wiki:latest
+    volumes:
+      - "wiki-data:/wiki-data"
+    environment:
+      DB_TYPE: mysql
+      DB_HOST: public-ip
+      DB_PORT: 3306
+      DB_USER: wikijs
+      DB_PASS: wikijs
+      DB_NAME: wiki
+    ports:
+      - 4405:3000
+
+volumes:
+  wiki-data: {}
