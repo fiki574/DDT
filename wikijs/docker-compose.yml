@@ -7,7 +7,7 @@ services:
       - "wiki-data:/wiki-data"
     environment:
       DB_TYPE: mysql
-      DB_HOST: public-ip
+      DB_HOST: localhost
       DB_PORT: 3306
       DB_USER: wikijs
       DB_PASS: wikijs

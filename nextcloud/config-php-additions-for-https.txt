@@ -1,7 +1,0 @@
-'trusted_domains' =>
-array (
-  0 => 'IP:port',
-  1 => 'domain.com',
-),
-'overwrite.cli.url' => 'https://IP:port',
-'overwrite.protocol' => 'https',

@@ -9,7 +9,7 @@ services:
       MYSQL_DATABASE: nextcloud
       MYSQL_USER: cloud
       MYSQL_PASSWORD: cloud
-      MYSQL_HOST: public-ip:3306
+      MYSQL_HOST: localhost:3306
     ports:
       - 4407:80
 
