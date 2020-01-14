@@ -5,14 +5,14 @@ services:
     image: redmine:latest
     volumes:
       - "redmine-data:/home/redmine/data"
+    ports:
+      - 4406:3000
     environment:
       REDMINE_DB_MYSQL: localhost
       REDMINE_DB_PORT: 3306
       REDMINE_DB_USERNAME: redmine
       REDMINE_DB_PASSWORD: redmine
       REDMINE_DB_DATABASE: redmine
-    ports:
-      - 4406:3000
 
 volumes:
   redmine-data: {}

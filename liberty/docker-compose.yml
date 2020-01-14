@@ -3,14 +3,14 @@ version: "2"
 services:
   liberty:
     image: websphere-liberty:latest
-    restart: always
-    environment:
-      LICENSE: accept
+    volumes:
+      - "wlp:/opt/ibm/wlp"
     ports:
       - 4410:9080
       - 4411:9443
-    volumes:
-      - "wlp:/opt/ibm/wlp"
+    environment:
+      LICENSE: accept
+    restart: always
 
 volumes:
   wlp: {}

@@ -5,13 +5,13 @@ services:
     image: nextcloud:latest
     volumes:
       - "nextcloud-data:/var/www/html"
+    ports:
+      - 4407:80
     environment:
       MYSQL_DATABASE: nextcloud
       MYSQL_USER: cloud
       MYSQL_PASSWORD: cloud
       MYSQL_HOST: localhost:3306
-    ports:
-      - 4407:80
 
 volumes:
   nextcloud-data: {}

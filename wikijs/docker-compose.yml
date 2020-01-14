@@ -5,6 +5,8 @@ services:
     image: requarks/wiki:latest
     volumes:
       - "wiki-data:/wiki-data"
+    ports:
+      - 4405:3000
     environment:
       DB_TYPE: mysql
       DB_HOST: localhost
@@ -12,8 +14,6 @@ services:
       DB_USER: wikijs
       DB_PASS: wikijs
       DB_NAME: wiki
-    ports:
-      - 4405:3000
 
 volumes:
   wiki-data: {}

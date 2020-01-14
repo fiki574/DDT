@@ -13,28 +13,28 @@ services:
         done; (exit $$s)"
     volumes:
       - "rocketchat-data:/app/uploads"
-    environment:
-      PORT: 3000
-      ROOT_URL: http://domain.com
-      MONGO_URL: mongodb://mongo:27017/rocketchat
-      MONGO_OPLOG_URL: mongodb://mongo:27017/local
-    depends_on:
-      - mongo
     ports:
       - 4408:3000
+    environment:
+      PORT: 3000
+      ROOT_URL: http://chat.domain.com
+      MONGO_URL: mongodb://mongo:27017/rocketchat
+      MONGO_OPLOG_URL: mongodb://mongo:27017/local
     labels:
       - "traefik.backend=rocketchat"
-      - "traefik.frontend.rule=Host: domain.com"
+      - "traefik.frontend.rule=Host: chat.domain.com"
+    depends_on:
+      - mongo
 
   mongo:
     image: mongo:4.0
+    command: mongod --smallfiles --oplogSize 128 --replSet rs0 --storageEngine=mmapv1
     volumes:
      - "mongo-data:/data/db"
-    command: mongod --smallfiles --oplogSize 128 --replSet rs0 --storageEngine=mmapv1
-    labels:
-      - "traefik.enable=false"
     ports:
       - 27017:27017
+    labels:
+      - "traefik.enable=false"
 
   mongo-init-replica:
     image: mongo:4.0
