@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  openliberty:
+    image: open-liberty:kernel
+    restart: always
+    ports:
+      - 7712:9080
+      - 7713:9443
+    volumes:
+      - "ol:/opt/ol/wlp"
+      - "./server.xml:/opt/ol/wlp/usr/servers/defaultServer/server.xml"
+      #- "./app.war:/opt/ol/wlp/usr/shared/apps/app.war"
+
+volumes:
+  ol: {}
