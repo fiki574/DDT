@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+  liberty:
+    image: websphere-liberty:latest
+    restart: always
+    environment:
+      LICENSE: accept
+    ports:
+      - 7710:9080
+      - 7711:9443
+    volumes:
+      - "wlp:/opt/ibm/wlp"
+      - "./server.xml:/opt/ibm/wlp/usr/servers/defaultServer/server.xml"
+      #- "./app.war:/opt/ibm/wlp/usr/shared/apps/app.war"
+
+volumes:
+  wlp: {}
