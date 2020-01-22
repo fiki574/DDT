@@ -5,8 +5,8 @@ services:
     image: open-liberty:kernel
     restart: always
     ports:
-      - 7712:9080
-      - 7713:9443
+      - 4412:9080
+      - 4413:9443
     volumes:
       - "ol:/opt/ol/wlp"
       - "./server.xml:/opt/ol/wlp/usr/servers/defaultServer/server.xml"
