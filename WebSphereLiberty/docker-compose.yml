@@ -7,8 +7,8 @@ services:
     environment:
       LICENSE: accept
     ports:
-      - 7710:9080
-      - 7711:9443
+      - 4410:9080
+      - 4411:9443
     volumes:
       - "wlp:/opt/ibm/wlp"
       - "./server.xml:/opt/ibm/wlp/usr/servers/defaultServer/server.xml"
