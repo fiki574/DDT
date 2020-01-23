@@ -4,7 +4,7 @@ services:
   wiki:
     image: requarks/wiki:latest
     volumes:
-      - "wiki-data:/wiki-data"
+      - "wiki-data:/var/wiki/repo"
     ports:
       - 4405:3000
     environment:
