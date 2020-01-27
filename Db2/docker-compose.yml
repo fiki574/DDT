@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  db2:
+    image: ibmcom/db2:latest
+    privileged: true
+    environment:
+      LICENSE: accept
+      DB2INSTANCE: db2inst1
+      DB2INST1_PASSWORD: admin
+    ports:
+      - 4413:50000
+    volumes:
+      - "dbv:/database"
+
+volumes:
+  dbv: {}
