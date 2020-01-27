@@ -7,7 +7,7 @@ services:
     environment:
       LICENSE: accept
       DB2INSTANCE: db2inst1
-      DB2INST1_PASSWORD: admin
+      DB2INST1_PASSWORD: db2inst1
     ports:
       - 4413:50000
     volumes:
