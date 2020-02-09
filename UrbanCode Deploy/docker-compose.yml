@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  ucd-server:
+    image: ibmcom/ucds:latest
+    privileged: true
+    environment:
+      LICENSE: accept
+    ports:
+      - 4416:8443
+      - 4417:7918
+  ucd-agent:
+    image: ibmcom/ucda:latest
+    environment:
+      AGENT_NAME: agent-docker
+    depends_on:
+      - ucd-server
