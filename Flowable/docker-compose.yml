@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  flowable:
+    image: flowable/all-in-one:latest
+    restart: always
+    environment:
+      FLOWABLE_CONTENT_STORAGE_ROOT-FOLDER: /data
+      FLOWABLE_COMMON_APP_IDM-REDIRECT-URL: http://hostname-or-ip:port/flowable-idm
+    ports:
+      - 4414:8080
+    volumes:
+      - "flowable-data:/data"
+
+volumes:
+  flowable-data: {}
