@@ -3,15 +3,23 @@ version: "2"
 services:
   ucd-server:
     image: ibmcom/ucds:latest
-    privileged: true
     environment:
       LICENSE: accept
     ports:
       - 4416:8443
       - 4417:7918
+    volumes:
+      - "ucds-data:/opt/ibm-ucd/server"
+      
   ucd-agent:
     image: ibmcom/ucda:latest
     environment:
       AGENT_NAME: agent-docker
     depends_on:
       - ucd-server
+    volumes:
+      - "ucda-data:/opt/ibm-ucd/agent"
+
+volumes:
+  ucds-data: {}
+  ucda-data: {}
