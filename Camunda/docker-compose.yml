@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  camunda:
+    image: camunda/camunda-bpm-platform:latest
+    environment:
+      DB_DRIVER: org.postgresql.Driver
+      DB_URL: jdbc:postgresql://localhost:4417/camunda
+      DB_USERNAME: camunda
+      DB_PASSWORD: camunda
+    ports:
+      - 4415:8080
+    volumes:
+      - "camunda-data:/camunda"
+
+volumes:
+  camunda-data: {}

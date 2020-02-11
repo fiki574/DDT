@@ -1,0 +1,7 @@
+version: "2"
+
+services:
+  adminer:
+    image: adminer:latest
+    ports:
+      - 4416:8080

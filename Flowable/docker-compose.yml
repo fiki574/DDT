@@ -3,10 +3,13 @@ version: "2"
 services:
   flowable:
     image: flowable/all-in-one:latest
-    restart: always
     environment:
       FLOWABLE_CONTENT_STORAGE_ROOT-FOLDER: /data
       FLOWABLE_COMMON_APP_IDM-REDIRECT-URL: http://hostname-or-ip:port/flowable-idm
+      SPRING_DATASOURCE_DRIVER-CLASS-NAME: org.postgresql.Driver
+      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:4417/flowable
+      SPRING_DATASOURCE_USERNAME: flowable
+      SPRING_DATASOURCE_PASSWORD: flowable
     ports:
       - 4414:8080
     volumes:
