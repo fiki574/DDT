@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+  was:
+    image: ibmcom/websphere-traditional:latest
+    privileged: true
+    environment:
+      LICENSE: accept
+    ports:
+     - 7720:9043
+     - 7721:9443
+    volumes:
+      - "was-data:/opt/IBM/WebSphere"
+      - "was-tmp:/tmp"
+      - "./PASSWORD:/tmp/PASSWORD"
+
+volumes:
+  was-data: {}
+  was-tmp: {}

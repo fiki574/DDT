@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  scmm:
+    image: sdorra/scm-manager:latest
+    volumes:
+      - "scmm-lib:/var/lib/scm"
+      - "scmm-data:/opt/scm-server"
+    ports:
+     - 7719:8080
+
+volumes:
+  scmm-lib: {}
+  scmm-data: {}
