@@ -15,7 +15,7 @@ services:
       ARCHIVE_LOGS: "true"
       AUTOCONFIG: "true"
     ports:
-      - 4413:50000
+      - 4422:50000
     volumes:
       - "dbv:/database"
 

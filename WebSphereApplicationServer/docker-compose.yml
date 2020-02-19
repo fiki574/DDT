@@ -7,8 +7,8 @@ services:
     environment:
       LICENSE: accept
     ports:
-     - 7720:9043
-     - 7721:9443
+     - 4420:9043
+     - 4421:9443
     volumes:
       - "was-data:/opt/IBM/WebSphere"
       - "was-tmp:/tmp"

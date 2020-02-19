@@ -7,7 +7,7 @@ services:
       - "scmm-lib:/var/lib/scm"
       - "scmm-data:/opt/scm-server"
     ports:
-     - 7719:8080
+     - 4419:8080
 
 volumes:
   scmm-lib: {}
