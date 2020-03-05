@@ -1,13 +1,14 @@
-version: "2"
+version: "3.7"
 
 services:
   gitea:
+    container_name: gitea
     image: gitea/gitea:latest
-    volumes:
-      - "gitea-data:/data"
     ports:
       - 4404:3000
       - 22:22
+    volumes:
+      - "gitea-data:/data"
 
 volumes:
   gitea-data: {}

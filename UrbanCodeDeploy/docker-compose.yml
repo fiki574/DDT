@@ -1,7 +1,8 @@
-version: "2"
+version: "3.7"
 
 services:
   ucd-server:
+    container_name: ucds
     image: ibmcom/ucds:latest
     environment:
       LICENSE: accept
@@ -12,13 +13,14 @@ services:
       - "ucds-data:/opt/ibm-ucd/server"
       
   ucd-agent:
+    container_name: ucda
     image: ibmcom/ucda:latest
     environment:
       AGENT_NAME: agent-docker
-    depends_on:
-      - ucd-server
     volumes:
       - "ucda-data:/opt/ibm-ucd/agent"
+    depends_on:
+      - ucd-server
 
 volumes:
   ucds-data: {}

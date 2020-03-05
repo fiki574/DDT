@@ -1,7 +1,8 @@
-version: "2"
+version: "3.7"
 
 services:
   liberty:
+    container_name: liberty
     image: websphere-liberty:latest
     environment:
       LICENSE: accept

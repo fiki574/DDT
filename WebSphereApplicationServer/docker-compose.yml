@@ -1,7 +1,8 @@
-version: "2"
+version: "3.7"
 
 services:
   was:
+    container_name: was
     image: ibmcom/websphere-traditional:latest
     privileged: true
     environment:

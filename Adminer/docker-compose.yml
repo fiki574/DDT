@@ -1,7 +1,8 @@
-version: "2"
+version: "3.7"
 
 services:
   adminer:
+    container_name: adminer
     image: adminer:latest
     ports:
       - 4423:8080

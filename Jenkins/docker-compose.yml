@@ -1,16 +1,17 @@
-version: "2"
+version: "3.7"
 
 services:
   jenkins:
+    container_name: jenkins
     image: jenkins/jenkins:latest
-    volumes:
-      - "jenkins-data:/var/jenkins_home"
+    environment:
+      JENKINS_HOST_HOME: jenkins-data
     ports:
       - 4402:8080
       - 4403:8443
       - 50000:50000
-    environment:
-      JENKINS_HOST_HOME: jenkins-data
+    volumes:
+      - "jenkins-data:/var/jenkins_home"
     labels:
       kompose.service.type: nodeport
 

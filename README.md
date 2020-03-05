@@ -36,5 +36,7 @@ Classic _docker-compose.yml_ file collection for various DevOps tools.
 - 4421 - WebSphere Application Server HTTPS
 - 4422 - Db2
 - 4423 - Adminer
+- 4424 - Registry
+- 4425 - Portainer
 - 27017 - MongoDB for Rocket.Chat
 - 50000 - Jenkins API

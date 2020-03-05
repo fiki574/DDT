@@ -1,7 +1,8 @@
-version: "2"
+version: "3.7"
 
 services:
   db2:
+    container_name: db2
     image: ibmcom/db2:latest
     privileged: true
     environment:

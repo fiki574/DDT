@@ -1,16 +1,17 @@
-version: "2"
+version: "3.7"
 
 services:
   sonarqube:
+    container_name: sonarqube
     image: sonarqube:latest
-    volumes:
-      - "sonarqube-data:/opt/sonarqube"
-    ports:
-      - 4409:9000
     environment:
       sonar.jdbc.url: jdbc:postgresql://localhost:4417/sonar?currentSchema=sonar
       sonar.jdbc.username: sonar
       sonar.jdbc.password: sonar
+    ports:
+      - 4409:9000
+    volumes:
+      - "sonarqube-data:/opt/sonarqube"
 
 volumes:
   sonarqube-data: {}

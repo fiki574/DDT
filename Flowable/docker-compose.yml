@@ -1,7 +1,8 @@
-version: "2"
+version: "3.7"
 
 services:
   flowable:
+    container_name: flowable
     image: flowable/all-in-one:latest
     environment:
       FLOWABLE_CONTENT_STORAGE_ROOT-FOLDER: /data

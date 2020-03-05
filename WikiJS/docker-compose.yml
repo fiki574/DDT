@@ -1,12 +1,9 @@
-version: "2"
+version: "3.7"
 
 services:
   wiki:
+    container_name: wiki
     image: requarks/wiki:latest
-    volumes:
-      - "wiki-data:/var/wiki/repo"
-    ports:
-      - 4405:3000
     environment:
       DB_TYPE: mysql
       DB_HOST: localhost
@@ -14,6 +11,10 @@ services:
       DB_USER: wikijs
       DB_PASS: wikijs
       DB_NAME: wiki
+    ports:
+      - 4405:3000
+    volumes:
+      - "wiki-data:/var/wiki/repo"
 
 volumes:
   wiki-data: {}

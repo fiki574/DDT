@@ -1,14 +1,15 @@
-version: "2"
+version: "3.7"
 
 services:
   openliberty:
+    container_name: openliberty
     image: open-liberty:kernel
     ports:
       - 4412:9080
       - 4413:9443
     volumes:
-      - "ol:/opt/ol/wlp"
+      - "ol-data:/opt/ol/wlp"
       - "./server.xml:/opt/ol/wlp/usr/servers/defaultServer/server.xml"
 
 volumes:
-  ol: {}
+  ol-data: {}

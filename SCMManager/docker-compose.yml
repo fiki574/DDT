@@ -1,13 +1,14 @@
-version: "2"
+version: "3.7"
 
 services:
-  scmm:
+  scmmanager:
+    container_name: scmmanager
     image: sdorra/scm-manager:latest
+    ports:
+     - 4419:8080
     volumes:
       - "scmm-lib:/var/lib/scm"
       - "scmm-data:/opt/scm-server"
-    ports:
-     - 4419:8080
 
 volumes:
   scmm-lib: {}
