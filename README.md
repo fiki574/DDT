@@ -12,7 +12,6 @@ Classic _docker-compose.yml_ file collection for various DevOps tools.
 
 # Ports
 
-- 22 - Gitea SSH
 - 4401 - Nexus
 - 4402 - Jenkins HTTP
 - 4403 - Jenkins HTTPS
@@ -38,5 +37,7 @@ Classic _docker-compose.yml_ file collection for various DevOps tools.
 - 4423 - Adminer
 - 4424 - Registry
 - 4425 - Portainer
+- 4426 - MySQL
 - 27017 - MongoDB for Rocket.Chat
 - 50000 - Jenkins API
+- 50022 - Gitea SSH

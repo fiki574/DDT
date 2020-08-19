@@ -6,7 +6,7 @@ services:
     image: gitea/gitea:latest
     ports:
       - 4404:3000
-      - 22:22
+      - 50022:22
     volumes:
       - "gitea-data:/data"
 
