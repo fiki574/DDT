@@ -38,6 +38,8 @@ Classic _docker-compose.yml_ file collection for various DevOps tools.
 - 4424 - Registry
 - 4425 - Portainer
 - 4426 - MySQL
+- 4427 - Build Your Own Botnet Web GUI
+- 4428 - Build Your Own Botnetn Command Line
 - 27017 - MongoDB for Rocket.Chat
 - 50000 - Jenkins API
 - 50022 - Gitea SSH

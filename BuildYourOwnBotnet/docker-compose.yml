@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  byob:
+    container_name: byob
+    image: byob-web:latest
+    ports:
+      - 4427:500

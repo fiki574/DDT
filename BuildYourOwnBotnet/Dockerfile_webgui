@@ -1,0 +1,21 @@
+#docker build -f Dockerfile_webgui -t byob-web:latest .
+#docker run -d -p 4427:5000 byob-web:latest
+
+FROM ubuntu:bionic
+
+WORKDIR /app
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y build-essential git cmake && \
+    apt-get install -y python3.6 python3-pip && \
+    git clone https://github.com/malwaredllc/byob.git . && \
+    rm -rf .github .gitattributes .gitignore .travis.yml LICENSE README.md
+
+WORKDIR /app/web-gui
+RUN python3.6 -m pip install pip --upgrade && \
+    python3.6 -m pip install wheel && \
+    python3.6 -m pip install cmake && \
+    python3.6 -m pip install -r requirements.txt
+
+EXPOSE 5000
+ENTRYPOINT ["python3.6", "run.py"]
